@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using app.web.Models;
 
 namespace app.web.Controllers
 {
@@ -10,29 +11,19 @@ namespace app.web.Controllers
     {
         public IActionResult Index()
         {
-            var nameList = new List<string>(){
-                "Charles", "Danny", "Sam"
+            var nameList = new List<Dog>(){
+                new Dog{ Name = "Rocky" },
+                new Dog{ Name = "Jake" },
+                new Dog{ Name = "Toby" },
+                new Dog{ Name = "Murphy" }
             };
 
 
             ViewData["Name"] = "Charles";
-            //ViewData["NameList"] = list;
+            
             return View(nameList);
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.dd";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
 
         public IActionResult Error()
         {

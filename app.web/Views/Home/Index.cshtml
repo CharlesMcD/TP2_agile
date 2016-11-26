@@ -2,18 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IEnumerable<string>
+@model IEnumerable<app.web.Models.Dog>
 
 <h2>@ViewData["Name"].</h2>
 
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6">
         <h2>Liste de noms de chien</h2>
         <ul>
             @foreach (var name in Model)
             {
-                <li>@name</li>
+                <li>@name.Name</li>
             }
         </ul>
     </div>
